@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class EndGame : MonoBehaviour
 {
-    int playerCounter = 0;
+    int playerToEnd = 0;
     int playerQuantity;
 
     public void Start()
@@ -23,7 +23,7 @@ public class EndGame : MonoBehaviour
         if(collision.CompareTag($"Player"))
         {
             //Debug.Log($"Livello completato!");
-            playerCounter++;
+            playerToEnd++;
             PlayerCounter();
         }
     }
@@ -33,13 +33,13 @@ public class EndGame : MonoBehaviour
         if (collision.CompareTag($"Player"))
         {
             //Debug.Log($"Livello completato!");
-            playerCounter--;
+            playerToEnd--;
         }
     }
 
     private void PlayerCounter()
     {
-        if (playerCounter == playerQuantity)
+        if (playerToEnd == playerQuantity)
         {
             Debug.Log($"Livello completato!");
         }
